@@ -24,11 +24,17 @@ export default {
     searchOnServer(searchingTerm) {
       // definisco l'url di ricerca X I MOVIES, creandolo dalla ricerca base + il termine cercato
       this.newEndpointMovies = this.endpointMovies + searchingTerm;
-      console.log(this.newEndpointMovies);
-      axios.get(this.endpointMovies).then((response) => {
-        console.log(response);
+      axios.get(this.newEndpointMovies).then((response) => {
         this.storeMovies.movies = response.data.results;
-      })
+        console.log(this.storeMovies.movies);
+      });
+      // definisco l'url di ricerca X LE TV SERIES, creandolo dalla ricerca base + il termine cercato
+      this.newEndpointTVSeries = this.endpointTVSeries + searchingTerm;
+      console.log(this.newEndpointTVSeries);
+      axios.get(this.newEndpointTVSeries).then((response) => {
+        this.storeTVSeries.tvSeries = response.data.results;
+        console.log(this.storeTVSeries.tvSeries);
+      });
     }
   },
 
