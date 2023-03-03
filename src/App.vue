@@ -44,7 +44,7 @@ export default {
 
 <template>
   <AppHeader @searchingTime="searchOnServer" />
-  <AppMain />
+  <AppMain :MovieList="storeMovies" :TVList="storeTVSeries" />
 </template>
 
 <style lang="scss"></style>
