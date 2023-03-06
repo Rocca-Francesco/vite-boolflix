@@ -1,24 +1,32 @@
 <script>
+// storage per i dati cercati
+import { storeMovies } from "../assets/storeMovies";
+import { storeTVSeries } from "../assets/storeTVSeries";
+
 export default {
-  props: {
-    MovieList: Object,
-    TVList: Object
+  data() {
+    return {
+      storeMovies,
+      storeTVSeries,
+    }
   }
 }
 </script>
 
 <template>
   <main>
-    <div id="film">
+    <!-- aggiungo un v-show per non visualizzare i titoli all'inizio ma anche nell'eventualità non ci siano risultati -->
+    <div id="film" v-show="storeMovies.movies.length > 0">
       <h2>FILM</h2>
       <ul>
-        <li v-for="movie in MovieList.movies">{{ movie.title }}</li>
+        <li v-for="movie in storeMovies.movies">{{ movie.title }}</li>
       </ul>
     </div>
-    <div id="tvSeries">
+    <!-- aggiungo un v-show per non visualizzare i titoli all'inizio ma anche nell'eventualità non ci siano risultati -->
+    <div id="tvSeries" v-show="storeTVSeries.tvSeries.length > 0">
       <h2>SERIE TV</h2>
       <ul>
-        <li v-for="series in TVList.tvSeries">{{ series.name }}</li>
+        <li v-for="series in storeTVSeries.tvSeries">{{ series.name }}</li>
       </ul>
     </div>
   </main>
