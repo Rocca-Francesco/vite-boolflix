@@ -24,11 +24,11 @@ export default {
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <form class="d-flex">
+          <div class="d-flex">
             <input class="form-control me-2 bg-dark text-light" type="text" placeholder="Search" aria-label="Search"
               v-model="searchingTerm" @keyup.enter="searchSend(searchingTerm)">
             <button class="btn btn-outline-success" type="button" @click="searchSend(searchingTerm)">Search</button>
-          </form>
+          </div>
         </div>
       </div>
     </nav>
