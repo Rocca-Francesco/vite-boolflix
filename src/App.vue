@@ -30,7 +30,6 @@ export default {
       });
       // definisco l'url di ricerca X LE TV SERIES, creandolo dalla ricerca base + il termine cercato
       this.newEndpointTVSeries = this.endpointTVSeries + searchingTerm;
-      console.log(this.newEndpointTVSeries);
       axios.get(this.newEndpointTVSeries).then((response) => {
         this.storeTVSeries.tvSeries = response.data.results;
         console.log(this.storeTVSeries.tvSeries);
