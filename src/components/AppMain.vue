@@ -43,6 +43,7 @@ export default {
 <style lang="scss" scoped>
 main {
   background-color: rgb(99, 99, 99);
+  min-height: calc(100vh - 3.5rem);
 }
 
 h2 {

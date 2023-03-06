@@ -28,6 +28,7 @@ export default {
     },
 
     generateCover(urlIMG) {
+      console.log(urlIMG);
       return this.endpointIMG + urlIMG;
     }
   }
@@ -38,8 +39,10 @@ export default {
   <!-- card sezione MOVIES -->
   <div class="col-3 text-center" v-for="movie in listMovies">
     <div class="cardsBG">
-      <div>
-        <img :src="generateCover(movie.poster_path)" :alt="movie.original_title">
+      <div class="cardsCover">
+        <img class="imgBroken" v-if="movie.poster_path == null"
+          src="https://cdn2.iconfinder.com/data/icons/symbol-gray-set-3b/100/1-40-512.png" alt="">
+        <img v-else :src="generateCover(movie.poster_path)" :alt="movie.original_title">
       </div>
       <h3>{{ movie.original_title }}</h3>
       <h2>{{ movie.title }}</h2>
@@ -53,8 +56,10 @@ export default {
   <!-- card sezione TV SERIES -->
   <div class="col-3 text-center" v-for="TVserie in listTVseries">
     <div class="cardsBG">
-      <div>
-        <img :src="generateCover(TVserie.poster_path)" :alt="TVserie.original_name">
+      <div class="cardsCover">
+        <img class="imgBroken" v-if="TVserie.poster_path == null"
+          src="https://cdn2.iconfinder.com/data/icons/symbol-gray-set-3b/100/1-40-512.png" alt="">
+        <img v-else :src="generateCover(TVserie.poster_path)" :alt="TVserie.original_name">
       </div>
       <h3>{{ TVserie.original_name }}</h3>
       <h2>{{ TVserie.name }}</h2>
@@ -72,6 +77,20 @@ export default {
   padding: 1rem;
   background-color: whitesmoke;
   min-height: 30rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardsCover {
+  min-height: 17.35rem;
+  display: flex;
+  justify-content: center;
+}
+
+.imgBroken {
+  width: 11rem;
+  align-self: center;
 }
 
 h2 {
