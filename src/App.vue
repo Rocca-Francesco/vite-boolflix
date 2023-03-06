@@ -16,7 +16,7 @@ export default {
       endpointMovies: "https://api.themoviedb.org/3/search/movie?api_key=c9d251e8f5dc4e4147cc8a8e957c1f1b&language=it-IT&query=",
       newEndpointMovies: "",
       endpointTVSeries: "https://api.themoviedb.org/3/search/tv?api_key=c9d251e8f5dc4e4147cc8a8e957c1f1b&language=it-IT&query=",
-      newEndpointTVSeries: ""
+      newEndpointTVSeries: "",
     }
   },
 
@@ -44,7 +44,7 @@ export default {
 
 <template>
   <AppHeader @searchingTime="searchOnServer" />
-  <AppMain :MovieList="storeMovies" :TVList="storeTVSeries" />
+  <AppMain />
 </template>
 
 <style lang="scss"></style>
