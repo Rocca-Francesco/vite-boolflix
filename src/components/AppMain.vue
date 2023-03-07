@@ -48,6 +48,6 @@ main {
 
 h2 {
   font-size: 1.5rem;
-  padding: 1rem;
+  padding: 1rem 0;
 }
 </style>
