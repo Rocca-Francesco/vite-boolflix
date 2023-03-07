@@ -54,21 +54,8 @@ export default {
       </span>
       <!-- stars rate -->
       <div>
-        <span class="starsUP"><font-awesome-icon v-show="generateVote(movie.vote_average) >= 1"
-            icon="fa-solid fa-star" /></span>
-        <span class="starsUP"><font-awesome-icon v-show="generateVote(movie.vote_average) > 1"
-            icon="fa-solid fa-star" /></span>
-        <span class="starsUP"><font-awesome-icon v-show="generateVote(movie.vote_average) > 2"
-            icon="fa-solid fa-star" /></span>
-        <span class="starsUP"><font-awesome-icon v-show="generateVote(movie.vote_average) > 3"
-            icon="fa-solid fa-star" /></span>
-        <span class="starsUP"><font-awesome-icon v-show="generateVote(movie.vote_average) > 4"
-            icon="fa-solid fa-star" /></span>
-        <span><font-awesome-icon v-show="generateVote(movie.vote_average) < 1" icon="fa-solid fa-star" /></span>
-        <span><font-awesome-icon v-show="generateVote(movie.vote_average) < 2" icon="fa-solid fa-star" /></span>
-        <span><font-awesome-icon v-show="generateVote(movie.vote_average) < 3" icon="fa-solid fa-star" /></span>
-        <span><font-awesome-icon v-show="generateVote(movie.vote_average) < 4" icon="fa-solid fa-star" /></span>
-        <span><font-awesome-icon v-show="generateVote(movie.vote_average) < 5" icon="fa-solid fa-star" /></span>
+        <span><font-awesome-icon v-for="i in generateVote(movie.vote_average)" icon="fa-solid fa-star" /></span>
+        <span><font-awesome-icon v-for="i in (5 - generateVote(movie.vote_average))" icon="fa-regular fa-star" /></span>
       </div>
     </div>
   </div>
@@ -88,21 +75,8 @@ export default {
       </span>
       <!-- stars rate -->
       <div>
-        <span class="starsUP"><font-awesome-icon v-show="generateVote(TVserie.vote_average) >= 1"
-            icon="fa-solid fa-star" /></span>
-        <span class="starsUP"><font-awesome-icon v-show="generateVote(TVserie.vote_average) > 1"
-            icon="fa-solid fa-star" /></span>
-        <span class="starsUP"><font-awesome-icon v-show="generateVote(TVserie.vote_average) > 2"
-            icon="fa-solid fa-star" /></span>
-        <span class="starsUP"><font-awesome-icon v-show="generateVote(TVserie.vote_average) > 3"
-            icon="fa-solid fa-star" /></span>
-        <span class="starsUP"><font-awesome-icon v-show="generateVote(TVserie.vote_average) > 4"
-            icon="fa-solid fa-star" /></span>
-        <span><font-awesome-icon v-show="generateVote(TVserie.vote_average) < 1" icon="fa-solid fa-star" /></span>
-        <span><font-awesome-icon v-show="generateVote(TVserie.vote_average) < 2" icon="fa-solid fa-star" /></span>
-        <span><font-awesome-icon v-show="generateVote(TVserie.vote_average) < 3" icon="fa-solid fa-star" /></span>
-        <span><font-awesome-icon v-show="generateVote(TVserie.vote_average) < 4" icon="fa-solid fa-star" /></span>
-        <span><font-awesome-icon v-show="generateVote(TVserie.vote_average) < 5" icon="fa-solid fa-star" /></span>
+        <span><font-awesome-icon v-for="i in generateVote(TVserie.vote_average)" icon="fa-solid fa-star" /></span>
+        <span><font-awesome-icon v-for="i in (5 - generateVote(TVserie.vote_average))" icon="fa-regular fa-star" /></span>
       </div>
     </div>
   </div>
@@ -136,9 +110,5 @@ h2 {
 
 h3 {
   font-size: 0.5rem;
-}
-
-.starsUP {
-  color: gold;
 }
 </style>
